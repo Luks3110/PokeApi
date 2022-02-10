@@ -1,16 +1,19 @@
-import React from "react";
+import React from 'react';
+import typeColors from '../../../Helpers/typeColors'
+import './pokeStyles.css';
 
 function PokeCard({ pokemon }) {
   return (
+    <div className="Card-Grid">
     <div className="Card">
       <div className="Card__img">
         <img src={pokemon.data.sprites.front_default} alt="pokemon" />
       </div>
-      <div className="Card__Name">{(pokemon.data.name)}</div>
+      <div className="Card__name">{(pokemon.data.name)}</div>
       <div className="Card__types">
         {pokemon.data.types.map((type) => {
-          console.log(type);
-          return <div className="Card__type">{type.name}</div>;
+          console.log(type)
+          return <div className="Card__type">{type.type.name}</div>;
         })}
       </div>
       <div className="Card__info">
@@ -23,6 +26,7 @@ function PokeCard({ pokemon }) {
           <p> {pokemon.data.height} </p>
         </div>
       </div>
+    </div>
     </div>
   );
 }

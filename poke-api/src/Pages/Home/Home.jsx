@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Pagination from "../../components/Pagination/Pagination";
-import axios from "axios";
+import { getAllPokemon, getPokemon } from "./pokeFuncs";
 import PokeCard from "../../components/PokeList/PokeCard/PokeCard";
+import './homeStyles.css'
 
 function Home() {
   const [pokemon, setPokemon] = useState([]);
@@ -11,24 +12,8 @@ function Home() {
   const [nextPageUrl, setNextPageUrl] = useState("");
   const [prevPageUrl, setPrevPageUrl] = useState("");
   const [loading, setLoading] = useState(true);
-  const [pokemonDetails, setPokemonDetails] = useState("");
   const [pokemonData, setPokemonData] = useState("");
 
-  async function getAllPokemon(url) {
-    return new Promise((resolve, reject) => {
-      axios.get(url).then((res) => {
-        resolve(res.data);
-      });
-    });
-  }
-
-  async function getPokemon(url) {
-    return new Promise((resolve, reject) => {
-      axios.get(url).then((res) => {
-        resolve(res);
-      });
-    });
-  }
 
   useEffect(() => {
     setLoading(true);
