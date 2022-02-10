@@ -1,0 +1,61 @@
+p {
+  margin: 0;
+}
+
+.Card-Grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  padding: 3rem;
+  place-items: center;
+  column-gap: 2rem;
+  row-gap: 3rem;
+  flex-direction: row
+}
+
+.Card {
+  border-radius: 10px;
+  box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
+  background: white;
+  text-align: center;
+  width: 400px;
+}
+
+.Card__img {
+  text-align: center;
+  
+}
+
+.Card__types {
+  display: flex;
+  justify-content: center;    
+}
+
+.Card__type {
+  padding: 5px 10px;
+  margin: 10px 10px 10px 0;
+  border-radius: 5px;
+  background: cyan;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.Card__name {
+  text-align: center;
+  font-weight: 800;
+  text-transform: capitalize;
+  width: 100%;
+}
+
+.Card__info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.Card__data {
+  padding-bottom: 10px;
+}
+
+.Card__data .title {
+  font-weight: 700;
+}
